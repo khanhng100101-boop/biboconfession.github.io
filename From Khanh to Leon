@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>from.me_to_you ❤️</title>
+<style>
+  body {
+    background-color: #0d1117;
+    color: #c9d1d9;
+    font-family: 'Courier New', monospace;
+    padding: 40px;
+  }
+
+  .terminal {
+    border: 2px solid #30363d;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #161b22;
+  }
+
+  .prompt {
+    color: #58a6ff;
+  }
+
+  .command {
+    color: #8b949e;
+  }
+
+  .output {
+    color: #56d364;
+  }
+
+  .heart {
+    color: #ff7b72;
+    font-weight: bold;
+  }
+
+  /* ✅ Tick box styling */
+  .answer-box {
+    margin-top: 10px;
+    font-family: 'Courier New', monospace;
+  }
+
+  input[type="checkbox"] {
+    transform: scale(1.2);
+    margin-right: 5px;
+    accent-color: #58a6ff;
+    cursor: pointer;
+  }
+
+  label {
+    color: #c9d1d9;
+    cursor: pointer;
+  }
+
+  /* 💫 Fade-in effect for response */
+  #response {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+  }
+
+  #response.visible {
+    opacity: 1;
+  }
+</style>
+</head>
+<body>
+<div class="terminal">
+  <p><span class="prompt">me@heart</span>:<span class="command">~$</span> cat feelings.txt</p>
+  <p class="output">I thought breaking up was the right solution...</p>
+  <p class="output">But deep down I still love you and I think we can work on together, it was a lot of things you have done for me, maybe it takes me time to express my thoughts clearly and work with/work for myself for a better Khanh <span class="heart">true</span> for "I still love you".</p>
+  <p class="output"> I hope you can consider my efforts for the confession hihi hope you feel supported/seen by me. I believe Me (and us) could have done better ❤️</p>
+  <br>
+  <p><span class="prompt">me@heart</span>:<span class="command">~$</span> echo "I love you Leon."</p>
+  <p class="output">💌 Would you like to be my boyfriend again?</p>
+
+  <!-- ✅ Yes / No tick boxes -->
+  <div class="answer-box">
+    <label>
+      <input type="checkbox" id="yesBox" onclick="chooseAnswer('yes')">
+      ✅ Yes
+    </label>
+    <label style="margin-left: 15px;">
+      <input type="checkbox" id="noBox" onclick="chooseAnswer('no')">
+      ❌ No
+    </label>
+  </div>
+
+  <p id="response" class="output"></p>
+</div>
+
+<!-- 💖 Your picture -->
+<div style="text-align:center;">
+  <img src="myphoto.jpg" alt="Us ❤️" style="width:250px; border-radius:12px; margin-top:20px;">
+</div>
+
+<script>
+function chooseAnswer(choice) {
+  const yesBox = document.getElementById("yesBox");
+  const noBox = document.getElementById("noBox");
+  const response = document.getElementById("response");
+
+  // Only one box checked at a time
+  if (choice === "yes") {
+    noBox.checked = false;
+    response.innerHTML = "💚 yas thankchu woohooo moahhhh excited jvjdjfhdsnvjsd ilove u moahahah";
+  } else if (choice === "no") {
+    yesBox.checked = false;
+    response.innerHTML = "you can only say YES.";
+  }
+
+  // Fade-in animation for the response
+  response.classList.remove("visible");
+  setTimeout(() => response.classList.add("visible"), 50);
+}
+</script>
+</body>
+</html>
